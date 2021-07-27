@@ -1,38 +1,110 @@
-.App {
+/*--------------------> Global <--------------------*/
+.Link {
+  text-decoration: none;
+}
+.Station {
+  padding: 20px 0 50px 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column; 
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(67, 88, 83);
+  min-height: 100vh;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Station h1 {
+  margin: 0;
+  font-size: calc(30px + 4vmin);
+  color:rgb(50, 255, 245);
+  text-shadow: 0px 5px rgb(34, 173, 166) ;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Station h2 {
+  margin: 0;
+  font-size: calc(20px + 3vmin);
+  color:rgb(255, 224, 50);
+  text-shadow: 0px 3px rgb(173, 153, 34) ;
 }
+.Station .pic {
+  background: lime;
+  color: white;
+  text-shadow: 3px 3px 10px black;
+  line-height: calc(200px + 30vh);
+  width: 90%;
+  height: calc(200px + 30vh);
+}
+/*--------------------> Modal <--------------------*/
+.curtain {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0,0,0,0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: scale(0);
+}
+.active {
+  display: flex !important;
+  transform: scale(1);
+}
+.modalContent {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 10px;
+  background: white;
+  height: 60vh;
+  width: 80vw;
+}
+input {
+  margin: 0;
+  padding: 0;
+  padding-left: 10vw;
+  box-sizing: border-box;
+  display: block;
+  width: 80vw;
+  font-size: calc(30px + 4vmin);
+  text-align: center;
+  letter-spacing: 10vw;
+  background: rgba(0,0,0,0.2);
+  border: none;
+}
+
+.modalContent .Link {
+  display: none;
+}
+/*--------------------> StartScreen <--------------------*/
+.StartScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: rgb(75, 71, 71);
+  min-height: 100vh;
+}
+
+.StartScreen div {
+  width: 100vw;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.StartScreen h1 {
+  margin: 0;
+  width: 100vw;
+  text-align: center;
+  margin-bottom: calc(50px + 10vh);
+  font-size: calc(40px + 4vmin);
+  color:rgb(255, 224, 50);
+  text-shadow: 0px 5px rgb(173, 153, 34) ;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/*--------------------> St 1 <--------------------*/
+/*--------------------> St 2 <--------------------*/
+/*--------------------> St 3 <--------------------*/
+/*--------------------> St 4 <--------------------*/

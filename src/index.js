@@ -1,12 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import StartScreen from './StartScreen';
+import Station from './Station';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Switch>
+        <Route path = '/st1' render = {(props) => (
+          <Station pin = {4321} h1 = {"Станция фотика"} nextLink={"/st2"}/>
+        )}/>
+        <Route path = '/st2' render = {(props) => (
+          <Station pin = {2345} h1 = {"Станция аймака"} nextLink={"/st3"}/>
+        )}/>
+        <Route path = '/st3' render = {(props) => (
+          <Station pin = {8585} h1 = {"Станция приставки"} nextLink={"/st4"}/>
+        )}/>
+        <Route path = '/st4' render = {(props) => (
+          <Station pin = {6666} h1 = {"Финальный ресторанчик"} nextLink={"/"}/>
+        )}/>
+        <Route exact path = '' component = {StartScreen}/>
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
