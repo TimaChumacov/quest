@@ -8,7 +8,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <HashRouter>
       <Switch>
         <Route path = '/#/st1' render = {(props) => (
           <Station pin = {4321} h1 = {"Станция фотика"} nextLink={"/#/st2"}/>
@@ -24,7 +24,7 @@ ReactDOM.render(
         )}/>
         <Route exact path = '' component = {StartScreen}/>
       </Switch>
-    </Router>
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
