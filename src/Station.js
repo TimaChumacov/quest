@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from 'react-dom';
 import Modal from "./Modal"
 import './App.css';
 import {Link} from 'react-router-dom';
@@ -28,7 +27,7 @@ export default class Station extends React.Component
   }
 
   input = e => {
-    if(e.target.value == this.props.pin)
+    if(e.target.value === this.props.pin)
     {
       this.setState({wasUnlocked: true})
     }
