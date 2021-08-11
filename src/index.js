@@ -10,16 +10,16 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
-        <Route path = '/st1' render = {(props) => (
-          <Station pin = {4321} h1 = {"Станция фотика"} nextLink={"/st2"}/>
+        <Route path = '/#/st1' render = {(props) => (
+          <Station pin = {4321} h1 = {"Станция фотика"} nextLink={"/#/st2"}/>
         )}/>
-        <Route path = '/st2' render = {(props) => (
-          <Station pin = {2345} h1 = {"Станция аймака"} nextLink={"/st3"}/>
+        <Route path = '/#/st2' render = {(props) => (
+          <Station pin = {2345} h1 = {"Станция аймака"} nextLink={"/#/st3"}/>
         )}/>
-        <Route path = '/st3' render = {(props) => (
-          <Station pin = {8585} h1 = {"Станция приставки"} nextLink={"/st4"}/>
+        <Route path = '/#/st3' render = {(props) => (
+          <Station pin = {8585} h1 = {"Станция приставки"} nextLink={"/#/st4"}/>
         )}/>
-        <Route path = '/st4' render = {(props) => (
+        <Route path = '/#/st4' render = {(props) => (
           <Station pin = {6666} h1 = {"Финальный ресторанчик"} nextLink={"/"}/>
         )}/>
         <Route exact path = '' component = {StartScreen}/>
