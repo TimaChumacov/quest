@@ -1,4 +1,9 @@
 /*--------------------> Global <--------------------*/
+/*--- disable is used for modal and "next station" appearing, modal input disappearing ---*/
+.disabled {
+  display: none !important;
+}
+
 .Link {
   text-decoration: none;
 }
@@ -46,12 +51,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  transform: scale(0);
-}
-.active {
-  display: flex !important;
-  transform: scale(1);
 }
 .modalContent {
   display: flex;
@@ -75,10 +74,6 @@ input {
   letter-spacing: 10vw;
   background: rgba(0,0,0,0.2);
   border: none;
-}
-
-.modalContent .Link {
-  display: none;
 }
 /*--------------------> StartScreen <--------------------*/
 .StartScreen {

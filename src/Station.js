@@ -30,6 +30,7 @@ export default class Station extends React.Component
     if(e.target.value === this.props.pin)
     {
       this.setState({wasUnlocked: true})
+      e.target.value = ""
     }
   }
 
@@ -41,9 +42,9 @@ export default class Station extends React.Component
         <div className="pic">карта с локацией станции</div>
         <h2 onClick = {() => this.setModalActive(true)}>Следущая станция</h2>
         <Modal active = {this.state.modalActive} setActive = {this.setModalActive}>
-          <input placeholder="____" onChange={(e) => this.input(e)} type = "number"/>
-          <p>Между станиями можно передвигатся написав пароль. Пароль Святу скажет тот кто его встретит. Это всё для того чтоб он знал только след станцию а не все сразу. А так, ему по одной будет открыватся станция. Кстати пароль {this.props.pin}</p>
-          <Link onClick = {this.clearUp} className = {this.state.wasUnlocked ? "Link active" : "Link"} to = {this.props.nextLink}><h1>К второй станции!</h1></Link>
+          <input className = {this.state.wasUnlocked ? "disabled" : ""} placeholder="____" onChange={(e) => this.input(e)} type = "number"/>
+          <p>Между станиями можно передвигатся написав пароль. Пароль Святу скажет тот кто его встретит. Это всё для того чтоб он знал только след станцию а не все сразу. А так, ему по одной будет открыватся станция. Кстати пароль чтоб пройти дальше {this.props.pin}</p>
+          <Link onClick = {this.clearUp} className = {this.state.wasUnlocked ? "Link" : "Link disabled"} to = {this.props.nextLink}><h1>К второй станции!</h1></Link>
         </Modal>
       </div>
     );
