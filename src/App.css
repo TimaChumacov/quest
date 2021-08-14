@@ -4,40 +4,54 @@
   display: none !important;
 }
 
+.html, body{
+  padding: 0;
+  margin: 0;
+}
+html, body, #root{
+  height: 100%;
+}
+
 .Link {
   text-decoration: none;
 }
 .Station {
-  padding: 20px 0 50px 0;
+  min-height: 100%;
+  padding: 0;
   box-sizing: border-box;
   display: flex;
   align-items: flex-end;
   flex-direction: column; 
   justify-content: space-between;
   align-items: center;
-  background: rgb(67, 88, 83);
-  min-height: 100vh;
+  background: no-repeat center border-box url("img/quest2.png");
+  background-size: contain;
   text-align: center;
 }
+
+.title {
+  margin-top: 20px;
+  height: 30%;
+  box-sizing: border-box;
+}
+
 .Station h1 {
   margin: 0;
-  font-size: calc(30px + 4vmin);
-  color:rgb(50, 255, 245);
-  text-shadow: 0px 5px rgb(34, 173, 166) ;
+  font-size: calc(10px + 8vmin);
+  color:rgb(43, 49, 49);
+  text-shadow: 0px 5px rgb(186, 243, 240) ;
 }
 .Station h2 {
   margin: 0;
+  margin-bottom: 50px;
   font-size: calc(20px + 3vmin);
-  color:rgb(255, 224, 50);
-  text-shadow: 0px 3px rgb(173, 153, 34) ;
+  color:rgb(54, 52, 41);
+  text-shadow: 0px 3px rgb(243, 224, 118) ;
 }
 .Station .pic {
-  background: lime;
-  color: white;
-  text-shadow: 3px 3px 10px black;
-  line-height: calc(200px + 30vh);
   width: 90%;
   height: calc(200px + 30vh);
+  animation: squeshie 1s ease-in-out alternate infinite;
 }
 /*--------------------> Modal <--------------------*/
 .curtain {
@@ -78,10 +92,11 @@ input {
 /*--------------------> StartScreen <--------------------*/
 .StartScreen {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: space-between;
   align-items: flex-end;
-  background: rgb(75, 71, 71);
+  background: no-repeat center border-box url("img/quest1.png");
+  background-size: contain;
   min-height: 100vh;
 }
 
@@ -94,12 +109,54 @@ input {
   margin: 0;
   width: 100vw;
   text-align: center;
-  margin-bottom: calc(50px + 10vh);
+  margin-bottom: calc(20px + 5vh);
   font-size: calc(40px + 4vmin);
-  color:rgb(255, 224, 50);
-  text-shadow: 0px 5px rgb(173, 153, 34) ;
+  color:rgb(105, 79, 79);
+  animation: squeshie 1s ease-in-out alternate infinite;
+  text-shadow: 
+  0px 3px rgb(255, 138, 138), 
+  0px -3px rgb(255, 138, 138),
+  3px 0px rgb(255, 138, 138),
+  -3px 0px rgb(255, 138, 138),
+  3px 3px rgb(255, 138, 138), 
+  -3px -3px rgb(255, 138, 138),
+  3px -3px rgb(255, 138, 138),
+  -3px 3px rgb(255, 138, 138);
 }
 /*--------------------> St 1 <--------------------*/
+.st1 {
+  background: no-repeat center border-box url("img/1q.png");
+  background-size: contain;
+}
 /*--------------------> St 2 <--------------------*/
+.st2 {
+  background: no-repeat center border-box url("img/2q.png");
+  background-size: contain;
+}
 /*--------------------> St 3 <--------------------*/
+.st3 {
+  background: no-repeat center border-box url("img/3q.png");
+  background-size: contain;
+}
 /*--------------------> St 4 <--------------------*/
+.st4 {
+  background: no-repeat center border-box url("img/4q.png");
+  background-size: contain;
+}
+/*--------------------> St 5 <--------------------*/
+.st5 {
+  background: no-repeat center border-box url("img/5q.png");
+  background-size: contain;
+}
+/*--------------------> St 6 <--------------------*/
+.st6 {
+  background: no-repeat center border-box url("img/6q.png");
+  background-size: contain;
+}
+
+/*--- animations ---*/
+
+@keyframes squeshie {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+ }

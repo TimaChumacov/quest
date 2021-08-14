@@ -15,6 +15,7 @@ export default class Station extends React.Component
     }
     this.setModalActive = this.setModalActive.bind(this);
     this.clearUp = this.clearUp.bind(this);
+    this.checkEnd = this.checkEnd.bind(this);
   }
 
   clearUp () {
@@ -24,6 +25,29 @@ export default class Station extends React.Component
 
   setModalActive = bool => {
     this.setState({modalActive: bool})
+  }
+
+  checkEnd(link) {
+    if(link === "/")
+    {
+      return (
+        <Link className = "Link" onClick = {this.clearUp} to = {this.props.nextLink}>
+          <h1>{"<"}-- К началу квеста</h1>
+        </Link>
+      )
+    } else 
+    {
+      return (
+        <div>
+        <h2 onClick = {() => this.setModalActive(true)}>Следущая станция -{">"}</h2>
+        <Modal active = {this.state.modalActive} setActive = {this.setModalActive}>
+          <input className = {this.state.wasUnlocked ? "disabled" : ""} onChange={(e) => this.input(e)} type = "text"/>
+          <p>Между станиями можно передвигатся написав кодовое слово. Его мы тебе скажем только когда ты закончишь с предыдущей станцией :)</p>
+          <Link onClick = {this.clearUp} className = {this.state.wasUnlocked ? "Link" : "Link disabled"} to = {this.props.nextLink}><h1>К следущей станции!</h1></Link>
+        </Modal>
+        </div>
+      )
+    }
   }
 
   input = e => {
@@ -38,14 +62,9 @@ export default class Station extends React.Component
   {
     return (
       <div className="Station1 Station">
-        <h1>{this.props.h1}</h1>
-        <div className="pic">карта с локацией станции</div>
-        <h2 onClick = {() => this.setModalActive(true)}>Следущая станция</h2>
-        <Modal active = {this.state.modalActive} setActive = {this.setModalActive}>
-          <input className = {this.state.wasUnlocked ? "disabled" : ""} placeholder="____" onChange={(e) => this.input(e)} type = "number"/>
-          <p>Между станиями можно передвигатся написав пароль. Пароль Святу скажет тот кто его встретит. Это всё для того чтоб он знал только след станцию а не все сразу. А так, ему по одной будет открыватся станция. Кстати пароль чтоб пройти дальше {this.props.pin}</p>
-          <Link onClick = {this.clearUp} className = {this.state.wasUnlocked ? "Link" : "Link disabled"} to = {this.props.nextLink}><h1>К второй станции!</h1></Link>
-        </Modal>
+        <div className="title"><h1>{this.props.h1}</h1></div>
+        <div className={"pic "+this.props.pic}></div>
+        {this.checkEnd(this.props.nextLink)}
       </div>
     );
   }
